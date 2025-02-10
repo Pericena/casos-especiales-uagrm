@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <title>Casos especiales UAGRM</title>
+  <script type="module" crossorigin src="/assets/index-8f385ee8.js"></script>
+  <link rel="stylesheet" href="/assets/index-b1ef842d.css">
+</head>
+
+<style>
+  .hover-nav:hover {
+  color: #0d6efd !important; /* Azul de Bootstrap */
+}
+
+.hover-dropdown:hover {
+  background-color: #f8f9fa !important; /* Fondo más claro */
+  color: #0d6efd !important; /* Azul de Bootstrap */
+}
+
+</style>
+
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary d-print-none">
+  <div class="container-fluid">
+    <!-- Logo del Núcleo Linux -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="./assets/img/logo-nucleolinux-uagrm.png" alt="Núcleo Linux"
+        class="me-2" width="80" height="40">
+      Casos Especiales
+    </a>
+
+    <!-- Botón para móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link text-dark hover-nav" href="#/">Registro</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark hover-nav" href="#/mallacurricular">Malla curricular</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark hover-nav" href="#/casosespeciales">Casos especiales</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark hover-nav" href="#" role="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Reportes
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item text-dark hover-dropdown" href="#/carta">Carta</a></li>
+      <li><a class="dropdown-item text-dark hover-dropdown" href="#/boletainscripcion">Boleta de
+          inscripción</a></li>
+      <li><a class="dropdown-item text-dark hover-dropdown" href="#/mallacurricularreporte">Malla
+          curricular</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+      <!-- Redes sociales -->
+      <div class="d-flex align-items-center ms-3">
+        <a href="https://chat.whatsapp.com/KPdNjT29KEZG6JnrsdJRWJ" target="_blank" class="text-dark mx-2 fs-4">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://t.me/nucleolinux_uagrm" target="_blank" class="text-dark mx-2 fs-4">
+          <i class="bi bi-telegram"></i>
+        </a>
+        <a href="https://www.facebook.com/groups/423662191547489" target="_blank" class="text-dark mx-2 fs-4">
+          <i class="bi bi-facebook"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+  <template id="boletaInscripcion">
+    <div id="containerBoletaInscripcion" class="container mt-4 mb-5">
+      <div class="row">
+        <p class="text-center fs-3 fw-bold mb-0">Universidad Autónoma Gabriel René Moreno</p>
+        <p class="text-center fs-5">Facultad de Ingeniería en Ciencias de la Computación, Redes y Telecomunicaciones</p>
+        <p class="text-center fs-4 fw-bold mt-5">Boleta de inscripcion</p>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-auto">
+          <p id="outEstudianteBoleta" class="mb-0"><span class="fw-bold">Univ: </span></p>
+        </div>
+        <div class="col-auto">
+          <p id="outRegistroBoleta" class="mb-0"><span class="fw-bold">Reg: </span></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-auto">
+          <p id="outCarnetBoleta" class="mb-0"><span class="fw-bold">CI: </span></p>
+        </div>
+        <div class="col-auto">
+          <p id="outCelularBoleta" class="mb-0"><span class="fw-bold">Celular: </span></p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <table id="boletaInscripcionTableBoleta" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 5%;">#</th>
+                <th scope="col" style="width: 65%;">Materia</th>
+                <th scope="col" style="width: 20%;" class="text-center">Sigla</th>
+                <th scope="col" style="width: 10%;" class="text-center">Grupo</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mt-3">
+        <a href="javascript:if(window.print)window.print()"
+          class="btn btn-sm btn-outline-primary ms-1 d-print-none">Imprimir</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="carta">
+    <div id="containerCarta" class="container mt-4 mb-5">
+      <div class="row">
+        <p id="outLugarFecha" class="text-end"></p>
+      </div>
+
+      <div class="row">
+        <p id="outNombreJefeDeCarrera" class="mb-0"></p>
+        <p id="outNombreDeCarrera" class="mb-0 fw-bold"></p>
+        <p class="mb-1">Presente</p>
+        <p class="mb-1 fs-4 text-center mt-3 mb-3">Ref. Solicitud de caso especial</p>
+      </div>
+
+      <div class="row">
+        <p>
+          A tiempo de saludarlo/a muy atentamente y felicitarlo/a por la labor que realiza como jefe/a de carrera, me
+          dirijo a usted mediante la presente para solicitar el procesamiento de mi caso especial para las siguientes
+          materias:
+        </p>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <table id="boletaInscripcionTableCarta" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 5%;">#</th>
+                <th scope="col" style="width: 65%;">Materia</th>
+                <th scope="col" style="width: 20%;" class="text-center">Sigla</th>
+                <th scope="col" style="width: 10%;" class="text-center">Grupo</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <p>Sin otro particular, atte.</p>
+        <div class="mt-5"></div>
+        <div class="mt-3"></div>
+        <p id="outEstudianteCarta" class="text-center mt-5 mb-0"><span class="fw-bold">Univ: </span></p>
+        <p id="outRegistroCarta" class="text-center mb-0"><span class="fw-bold">Reg: </span></p>
+        <p id="outCarnetCarta" class="text-center mb-0"><span class="fw-bold">CI: </span></p>
+        <p id="outCelularCarta" class="text-center mb-0"><span class="fw-bold">Celular: </span></p>
+      </div>
+
+      <div class="d-flex justify-content-end mt-3">
+        <a href="javascript:if(window.print)window.print()"
+          class="btn btn-sm btn-outline-primary ms-1 d-print-none">Imprimir</a>
+      </div>
+
+    </div>
+  </template>
+
+
+  <div id="app-root"></div>
+
+  <!-- mallacurricular -->
+  <template id="mallacurricular">
+    <!-- estado materia -->
+    <div id="containerMallacurricular" class="container-fluid mb-5">
+      <div class="row mt-3 d-print-none">
+        <div class="col-12">
+          <p id="carreraNombre" class="text-center fw-bold mt-2 mb-0"></p>
+          <p id="carreraDirector" class="text-center mb-0"></p>
+        </div>
+      </div>
+
+      <div class="row mt-3 mb-3" id="estadoMateria">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input cursorpointer" type="radio" name="materia" id="aprobada" value="aprobada">
+            <label class="form-check-label cursorpointer" for="aprobada">
+              <span class="badge card-background-yellow">Materias aprobadas</span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input cursorpointer" type="radio" name="materia" id="inscrita" value="inscrita">
+            <label class="form-check-label cursorpointer" for="inscrita">
+              <span class="badge card-background-green">Materias inscritas</span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input cursorpointer" type="radio" name="materia" id="casoespecial"
+              value="casoespecial">
+            <label class="form-check-label cursorpointer" for="casoespecial">
+              <span class="badge card-background-red">Materias caso especial</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </template>
+
+  <template id="cardMateriaMallaCurricular">
+    <div id="containerCardMateriaMallaCurricular" class="card card-materia" data-estado-materia="noinscrita" data-electiva="false">
+      <div class="card-body text-center pt-1 pb-1 ps-1 pe-1">
+        <p data-materia-sigla class="card-text mb-0"></p>
+        <p data-materia-nombre class="card-text card-materia-title"></p>
+      </div>
+    </div>
+  </template>
+
+  <!-- formulario -->
+  <template id="formularioEstudiante">
+    <div id="containerFormularioEstudiante" class="container-fluid">
+      <div class="row mt-2 mt-md-3 mt-lg-4">
+        <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+          <div class="card">
+            <div class="card-header">Datos personales</div>
+            <div class="card-body ps-4 pe-4">
+              <form id="formularioRegistroEstudiante">
+                <div class="mb-3">
+                  <label for="nombresApellidos" class="form-label">Nombres y Apellidos</label>
+                  <input id="nombresApellidos" type="text" name="nombresApellidos" class="form-control text-capitalize"
+                    required>
+                </div>
+                <div class="mb-3">
+                  <label for="numeroRegistro" class="form-label">Numero de registro</label>
+                  <input id="numeroRegistro" type="number" name="numeroRegistro" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="numeroCarnet" class="form-label">Numero de carnet</label>
+                  <input id="numeroCarnet" type="number" name="numeroCarnet" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="numeroCelular" class="form-label">Numero de celular</label>
+                  <input id="numeroCelular" type="number" name="numeroCelular" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="selectFacultadCarrera" class="form-label">Carrera</label>
+                  <select id="selectFacultadCarrera" name="carrera" class="form-select" required>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputDirectorCarrera" class="form-label">Director de carrera</label>
+                  <input id="inputDirectorCarrera" type="text" name="directorCarrera" class="form-control" required>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                  <button id="btnRegistrarEstudiante" type="button" class="btn btn-primary">Guardar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- casosespeciales -->
+  <template id="materiasCasosEspeciales">
+    <div id="containerMateriasCasosEspeciales" class="container">
+      <div class="row mt-2 mt-md-3 mt-lg-4">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+          <div class="card">
+            <div class="card-header">Materias de caso especial</div>
+            <div id="cardMateriaCasoEspecial" class="card-body ps-4 pe-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="divMateriaCasoEspecialForm">
+    <div id="containerMateriaCasoEspecialForm" class="row align-items-center mt-2">
+      <div class="col-8 col-md-9 col-lg-9">
+        <p id="outNombreMateriaCasoEspecial" class="fs-6 fw-medium mb-0"></p>
+      </div>
+      <div class="col-4 col-md-3 col-lg-3">
+        <div class="mb-0 mt-0">
+          <label class="form-label mb-0">Grupo</label>
+          <input id="inGrupoMateriaCasoEspecial" type="text"
+            class="form-control form-control-sm text-uppercase text-center grupo">
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- mallacurricular reporte -->
+  <template id="mallacurricularReporte">
+    <!-- estado materia -->
+    <div id="containerMallacurricularReporte" class="container mt-4 mb-5">
+      <div class="row">
+        <p id="carreraNombre" class="text-center text-uppercase fw-bold mb-0"></p>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between mt-2 mb-3">
+        <p id="nombreEstudiante" class="mb-0 text-capitalize"></p>
+        <div>
+          <span class="badge card-background-yellow">Materias aprobadas</span>
+          <span class="badge card-background-green">Materias inscritas</span>
+          <span class="badge card-background-red">Materias caso especial</span>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </template>
+
+  <template id="cardMateriaMallaCurricularReporte">
+    <div id="containerCardMateriaMallaCurricularReporte" class="card card-materia-reporte"
+      data-estado-materia="noinscrita">
+      <div class="card-body pt-1 pb-1 ps-1 pe-1">
+        <p data-materia-sigla class="card-text text-center mb-0"></p>
+        <p data-materia-nombre class="card-text text-center card-materia-title-reporte"></p>
+      </div>
+    </div>
+  </template>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
